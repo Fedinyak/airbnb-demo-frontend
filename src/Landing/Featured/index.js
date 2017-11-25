@@ -2,7 +2,7 @@ import React from "react";
 import "flexboxgrid2";
 import styled from "styled-components";
 import Card from "./Card";
-import { Container, Row } from "../Grid";
+import { Container, Row } from "../../Grid";
 import button from "./nextPage.svg";
 import parisImg from "./paris.png";
 import miamiImg from "./miami.png";
@@ -12,12 +12,12 @@ import seoulImg from "./seoul.png";
 import laImg from "./la.png";
 
 const TitleWrap = styled.div`
-  margin-top: 20px;
+  margin-top: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   @media only screen and (min-width: 768px) {
-    margin-top: 24px;
+    margin-top: 0;
   }
 `;
 

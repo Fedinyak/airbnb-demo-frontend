@@ -4,6 +4,7 @@ import Search from "./Search.js";
 import "../App.css";
 import airlogo from "./airbnb-logo.svg";
 import arrow from "./arrowDown.png";
+import { Link } from "react-router-dom";
 
 const Header = styled.div`
   position: fixed;
@@ -14,6 +15,7 @@ const Header = styled.div`
   top: 0;
   right: 0;
   left: 0;
+  z-index: 1;
 `;
 
 const HeaderWrap = styled.div`
@@ -22,7 +24,7 @@ const HeaderWrap = styled.div`
   margin-top: 14px;
 `;
 
-const Link = styled.a`
+const NavLink = styled.a`
   font-size: 14px;
   text-decoration: none;
   padding-left: 20px;
@@ -49,32 +51,29 @@ const ArrowImg = styled.img`
   }
 `;
 
-const Line = styled.div`
-  background: rgb(210, 210, 210);
-  height: 1px;
-  margin-top: 16px;
-`;
-
 export default function() {
   return (
     <Header>
       <div className="container">
         <HeaderWrap>
           <LogoWrap>
-            <img src={airlogo} className="Airlogo" alt="airbnb-logo" />
-            <div className="hidden-lg">
+            <Link to="/">
+              <img src={airlogo} className="Airlogo" alt="airbnb-logo" />
+            </Link>
+            <div className="hidden-lg hidden-xl">
               <ArrowImg src={arrow} />
             </div>
           </LogoWrap>
+
           <div className="col-xs-10  col-sm-7 col-lg-5">
             <Search />
           </div>
 
           <nav className="hidden-xs hidden-sm hidden-md col-md-offset-2 col-md-4">
-            <Link href="#">Become a host</Link>
-            <Link href="#">Help</Link>
-            <Link href="#">Sign Up</Link>
-            <Link href="#">Log In</Link>
+            <NavLink href="#">Become a host</NavLink>
+            <NavLink href="#">Help</NavLink>
+            <NavLink href="#">Sign Up</NavLink>
+            <NavLink href="#">Log In</NavLink>
           </nav>
         </HeaderWrap>
       </div>

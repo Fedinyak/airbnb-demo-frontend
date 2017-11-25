@@ -28,12 +28,14 @@ const Text = styled.p`
     font-size: 15px;
   }
 `;
-
 const Rating = styled.div`
   display: flex;
+  align-items: center;
   margin-top: 0;
   padding-top: 0;
+  margin-bottom: 0;
   @media only screen and (min-width: 768px) {
+    margin-bottom: 10px;
   }
 `;
 
@@ -41,13 +43,17 @@ const Star = styled.img`
   margin-right: 4px;
   margin-top: 0;
   padding-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
 `;
 
 const Reviews = styled.p`
   font-size: 12px;
   margin-left: 4px;
   margin-top: 0;
-  padding-top: 10px;
+  padding-top: 12px;
+  line-height: 0;
+  color: #383838;
 `;
 
 export default props => (

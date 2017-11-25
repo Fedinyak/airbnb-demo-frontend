@@ -27,7 +27,7 @@ const Img = styled.img`
   @media only screen and (min-width: 768px) {
     height: 22px;
     padding-top: 13px;
-    padding-right: 10px;
+    padding-right: 16px;
     padding-bottom: 13px;
     padding-left: 16px;
   }
@@ -37,6 +37,7 @@ const Input = styled.input`
   border: 0;
   font-weight: 300;
   font-size: 14px;
+  color: #383838;
   @media only screen and (min-width: 768px) {
     font-size: 16px;
   }
@@ -46,7 +47,7 @@ export default function() {
   return (
     <Search>
       <Img src={searchImg} />
-      <Input placeholder="Try “Miami”" />
+      <Input placeholder="Anywhere  ·  Homes" value="Anywhere  ·  Homes" />
     </Search>
   );
 }
