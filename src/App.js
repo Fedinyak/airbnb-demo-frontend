@@ -4,7 +4,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 import styled from "styled-components";
 import "./App.css";
 
-import Header from "./Landing/Header";
+import Header from "./Header";
 import Landing from "./Landing";
 import Homes from "./Homes";
 

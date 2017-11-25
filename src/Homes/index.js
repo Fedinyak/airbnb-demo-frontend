@@ -15,6 +15,13 @@ import oldTownImg from "./oldTown.png";
 import lussuosoImg from "./lussuoso.png";
 import inTheHistImg from "./inTheHist.png";
 
+<script
+  async
+  defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxOEFsUFY4NAH8J340blGyuZZpzDhbeAQ&callback=initMap"
+  type="text/javascript"
+/>;
+
 export const GoogleMap = props => (
   <GoogleMapReact defaultCenter={props.center} defaultZoom={props.zoom} />
 );
@@ -25,7 +32,7 @@ const MapContainer = styled.div`
   right: 0;
   height: 100%;
   width: 100%;
-  left: 65%;
+  left: 0%;
   margin-left: 16px;
 `;
 
@@ -45,7 +52,8 @@ export default function() {
       <Route path="/homes" />
       <div className="hidden-xs hidden-sm hidden-md col-lg-4 ">
         <MapContainer>
-          <GoogleMap center={{ lat: 54.26, lng: 51.53 }} zoom={4} />
+          <GoogleMap    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxOEFsUFY4NAH8J340blGyuZZpzDhbeAQ&callback=initMap"
+  type="text/javascript"></script> center={{ lat: 54.26, lng: 51.53 }} zoom={4} />
         </MapContainer>
       </div>
       <CardWrap className="container">
