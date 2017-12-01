@@ -24,17 +24,71 @@ const Button = styled.button`
   padding: 7px 16px;
 `;
 
-export default function() {
-  return (
-    <Filters>
-      <div className="container">
-        <Button>Dates</Button>
-        <Button>Guests</Button>
-        <Button className="hidden-xs hidden-sm hidden-md">Room type</Button>
-        <Button className="hidden-xs hidden-sm hidden-md">Price</Button>
-        <Button className="hidden-xs hidden-sm hidden-md">Instant book</Button>
-        <Button>More filters</Button>
+const Dates = styled.div`
+  position: absolute;
+  background: red;
+  margin-top: 54px;
+  height: 300px;
+  width: 300px;
+`;
+
+export default class Dropdown extends React.Component {
+  state = {
+    isOpen: false,
+    isCheckIn: true
+  };
+
+  toggleOpen = () => {
+    this.setState({ isOpen: !this.state.isOpen });
+    this.setState({ isCheckIn: !this.state.isCheckIn });
+  };
+
+  handleClick() {
+    this.setState(prevState => ({
+      isCheckIn: !prevState.isCheckIn
+    }));
+  }
+
+  //export default class Dates extends React.Component {
+  //  constructor(props) {
+  //   super(props);
+  //  this.state = { isDatesOn: true };
+
+  // This binding is necessary to make `this` work in the callback
+  //  this.handleClick = this.handleClick.bind(this);
+  // }
+
+  //  handleClick() {
+  //   this.setState(prevState => ({
+  //    isDatesOn: !prevState.isDatesOn
+  //  }));
+  // }
+
+  render() {
+    return (
+      <div>
+        <Filters>
+          <div className="container">
+            <Button onClick={this.toggleOpen}>
+              {this.state.isCheckIn ? "Dates" : "Check in — Check out"}
+            </Button>
+            <Button>Guests</Button>
+            <Button className="hidden-xs hidden-sm hidden-md">Room type</Button>
+            <Button className="hidden-xs hidden-sm hidden-md">Price</Button>
+            <Button className="hidden-xs hidden-sm hidden-md">
+              Instant book
+            </Button>
+            <Button>More filters</Button>
+          </div>
+        </Filters>
+        <div className="container">
+          <div className="row">
+            <div className="col-xs-12">
+              {this.state.isOpen && <Dates>My Content</Dates>}
+            </div>
+          </div>
+        </div>
       </div>
-    </Filters>
-  );
+    );
+  }
 }

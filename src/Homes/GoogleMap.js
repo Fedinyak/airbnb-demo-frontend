@@ -1,7 +1,4 @@
 import React from "react";
-import "flexboxgrid2";
-
-import styled from "styled-components";
 import { render } from "react-server";
 import GoogleMap from "google-map-react";
 /*
